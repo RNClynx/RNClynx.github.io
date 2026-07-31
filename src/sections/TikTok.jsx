@@ -19,13 +19,11 @@ export default function TikTok() {
       >
 
         <span className="sectionTag">
-            TIKTOK
           TIKTOK
         </span>
 
         <p>
-          I mostly post Rainbow Six Siege, with the occasional Roblox
-          video and random clips that I thought were funny enough to share.
+          I mostly post Rainbow Six Siege content.
         </p>
 
       </motion.div>
@@ -79,8 +77,7 @@ export default function TikTok() {
         <h2>@shilohdynastylover</h2>
 
         <span>
-          Mostly R6 clips, Roblox moments,
-          and whatever else I find funny enough to post.
+          Mostly R6 clips and me :D
           <br /><br />
           Click to check out my profile →
         </span>
