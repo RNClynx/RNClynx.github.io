@@ -125,8 +125,7 @@ export default function About() {
           I'm pretty introverted, so streaming has become one of my favorite
           things because it lets me meet new people and build a community.
           <br /><br />
-
-          :P.
+          :p
         </p>
 
       </motion.div>

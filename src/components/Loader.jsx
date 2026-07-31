@@ -1,12 +1,20 @@
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const bootSequence = [
-  "> initializing...",
-  "> loading interface...",
-  "> checking systems...",
-  "> online."
+  "> loading website...",
+  "> loading audio...",
+  "> welcome, lynx."
 ];
+
+const logo = `
+██╗     ██╗   ██╗███╗   ██╗██╗  ██╗
+██║     ╚██╗ ██╔╝████╗  ██║╚██╗██╔╝
+██║      ╚████╔╝ ██╔██╗ ██║ ╚███╔╝
+██║       ╚██╔╝  ██║╚██╗██║ ██╔██╗
+███████╗   ██║   ██║ ╚████║██╔╝ ██╗
+╚══════╝   ╚═╝   ╚═╝  ╚═══╝╚═╝  ╚═╝
+`;
 
 export default function Loader({ onFinish }) {
   const [line, setLine] = useState(0);
@@ -14,7 +22,7 @@ export default function Loader({ onFinish }) {
 
   useEffect(() => {
     if (line >= bootSequence.length) {
-      setReady(true);
+      setTimeout(() => setReady(true), 350);
       return;
     }
 
@@ -25,55 +33,60 @@ export default function Loader({ onFinish }) {
     return () => clearTimeout(timer);
   }, [line]);
 
+  useEffect(() => {
+    if (!ready) return;
+
+    const handleKey = () => onFinish();
+
+    window.addEventListener("keydown", handleKey);
+
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [ready, onFinish]);
+
   return (
-    <AnimatePresence>
-      <motion.div
-        className="loader"
-        initial={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-      >
-        <motion.h1
-          className="loaderTitle"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          LYNX
-        </motion.h1>
+    <motion.div
+      className="loader"
+      initial={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={ready ? onFinish : undefined}
+    >
+      <pre className="loaderAscii">
+        {logo}
+      </pre>
 
-        <div className="loaderTerminal">
-          {bootSequence.slice(0, line).map((text, index) => (
-            <motion.p
-              key={index}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.25 }}
-            >
-              {text}
-            </motion.p>
-          ))}
+      <p className="loaderVersion">
+        v1.0
+      </p>
 
-          {!ready && <span className="cursor">█</span>}
+      <div className="loaderDivider" />
 
-          {ready && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="loaderReady"
-            >
-              <p>Best experienced with sound.</p>
+      <div className="loaderTerminal">
 
-              <button
-                className="loaderButton"
-                onClick={onFinish}
-              >
-                ENTER
-              </button>
-            </motion.div>
-          )}
-        </div>
-      </motion.div>
-    </AnimatePresence>
+        {bootSequence.slice(0, line).map((text, index) => (
+
+          <motion.p
+            key={index}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            {text}
+            <span className="loaderCheck"> ✓</span>
+          </motion.p>
+
+        ))}
+
+        {ready && (
+          <motion.div
+            className="loaderContinue"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            <span className="cursor">█</span>
+            <span> Press any key to continue</span>
+          </motion.div>
+        )}
+
+      </div>
+    </motion.div>
   );
 }
