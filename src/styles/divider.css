@@ -1,0 +1,60 @@
+.divider{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:30px;
+
+margin:140px auto;
+
+width:100%;
+
+}
+
+.dividerLine{
+
+height:1px;
+
+width:240px;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+#00D9FF,
+transparent);
+
+}
+
+.dividerDot{
+
+width:16px;
+
+height:16px;
+
+border-radius:50%;
+
+background:#00D9FF;
+
+box-shadow:
+
+0 0 15px #00D9FF,
+
+0 0 35px #00D9FF;
+
+animation:pulseDot 2s infinite;
+
+}
+
+@keyframes pulseDot{
+
+50%{
+
+transform:scale(1.5);
+
+}
+
+}

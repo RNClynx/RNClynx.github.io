@@ -1,0 +1,424 @@
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+    min-height:100vh;
+    width:min(1400px,92%);
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    align-items:center;
+    gap:90px;
+    position:relative;
+}
+
+.heroContent{
+    z-index:2;
+}
+
+.heroTag{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 18px;
+    border-radius:999px;
+    background:rgba(0,217,255,.08);
+    border:1px solid rgba(0,217,255,.18);
+    color:#00D9FF;
+    font-family:"JetBrains Mono";
+    letter-spacing:2px;
+    font-size:14px;
+    backdrop-filter:blur(12px);
+}
+
+.heroTitle{
+
+    position:relative;
+
+    margin-top:25px;
+
+    font-size:clamp(100px,15vw,190px);
+
+    line-height:.9;
+
+    font-weight:900;
+
+    letter-spacing:12px;
+
+    color:#fff;
+
+    text-shadow:
+    0 0 12px rgba(0,217,255,.5),
+    0 0 35px rgba(0,217,255,.45),
+    0 0 80px rgba(0,217,255,.2);
+
+    animation:titleFloat 5s ease-in-out infinite;
+
+}
+
+.heroTitle::after{
+
+    content:"LYNX";
+
+    position:absolute;
+
+    inset:0;
+
+    color:#00D9FF;
+
+    opacity:.18;
+
+    transform:translate(6px,6px);
+
+    filter:blur(10px);
+
+    pointer-events:none;
+
+}
+
+.heroTitle::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-15%;
+
+    top:50%;
+
+    width:130%;
+
+    height:3px;
+
+    background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(0,217,255,.9),
+    transparent);
+
+    animation:scanline 5s linear infinite;
+
+}
+
+.heroSubtitle{
+
+    margin-top:25px;
+
+    font-size:clamp(30px,4vw,52px);
+
+    color:#00D9FF;
+
+    letter-spacing:6px;
+
+    font-weight:700;
+
+    text-shadow:
+    0 0 12px rgba(0,217,255,.6),
+    0 0 35px rgba(0,217,255,.35);
+
+    animation:subtitlePulse 3s ease-in-out infinite;
+
+}
+
+.heroDescription{
+
+    max-width:650px;
+
+    margin-top:35px;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    color:#94A3B8;
+
+}
+
+.heroButtons{
+
+    display:flex;
+
+    gap:22px;
+
+    margin-top:50px;
+
+}
+
+/* PANEL */
+
+.heroPanel{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:35px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+    0 0 40px rgba(0,217,255,.08);
+
+}
+
+.heroPanel::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-150%;
+
+    left:-40%;
+
+    width:70%;
+
+    height:400%;
+
+    background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.12),
+    transparent);
+
+    transform:rotate(25deg);
+
+    animation:panelShine 7s linear infinite;
+
+}
+
+.panelHeader{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:30px;
+
+    color:#94A3B8;
+
+    font-family:"JetBrains Mono";
+
+    letter-spacing:2px;
+
+}
+
+.panelHeader span{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#00ff88;
+
+    box-shadow:
+    0 0 10px #00ff88,
+    0 0 25px #00ff88;
+
+}
+
+/* STATS */
+
+.statsGrid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+.statCard{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:30px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+.statCard::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+    135deg,
+    transparent,
+    rgba(255,255,255,.08),
+    transparent);
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+.statCard:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#00D9FF;
+
+    box-shadow:
+    0 0 35px rgba(0,217,255,.25);
+
+}
+
+.statCard:hover::before{
+
+    opacity:1;
+
+}
+
+.statIcon{
+
+    font-size:32px;
+
+    color:#00D9FF;
+
+    margin-bottom:18px;
+
+}
+
+.statCard h2{
+
+    font-size:34px;
+
+    margin-bottom:10px;
+
+}
+
+.statCard p{
+
+    color:#94A3B8;
+
+}
+
+/* ANIMATIONS */
+
+@keyframes titleFloat{
+
+    0%,100%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+@keyframes subtitlePulse{
+
+    0%,100%{
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        opacity:.75;
+
+    }
+
+}
+
+@keyframes scanline{
+
+    0%{
+
+        transform:translateY(-120px);
+
+    }
+
+    100%{
+
+        transform:translateY(120px);
+
+    }
+
+}
+
+@keyframes panelShine{
+
+    0%{
+
+        left:-80%;
+
+    }
+
+    100%{
+
+        left:180%;
+
+    }
+
+}
+.heroProfile{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-bottom:28px;
+}
+
+.heroPfp{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid rgba(0,217,255,.3);
+    box-shadow:0 0 25px rgba(0,217,255,.25);
+}
+
+.heroStatusDot{
+    position:absolute;
+    bottom:48px;
+    right:calc(50% - 55px);
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:#22c55e;
+    border:3px solid #111827;
+}
+
+.heroProfile h3{
+    margin-top:18px;
+    font-size:24px;
+}
+
+.heroProfile p{
+    color:#94A3B8;
+    font-size:14px;
+    font-family:"JetBrains Mono";
+}

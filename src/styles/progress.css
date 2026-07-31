@@ -1,0 +1,28 @@
+.scrollProgress{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+height:4px;
+
+background:linear-gradient(
+90deg,
+#00D9FF,
+#6D5EF7,
+#00D9FF
+);
+
+background-size:300%;
+
+animation:shine 6s linear infinite;
+
+z-index:99999;
+
+box-shadow:0 0 20px #00D9FF;
+
+transition:width .15s linear;
+
+}

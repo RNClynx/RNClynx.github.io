@@ -1,0 +1,162 @@
+/* ==========================
+   BACKGROUND
+========================== */
+
+.bg-grid {
+    position: fixed;
+    inset: 0;
+
+    z-index: -10;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+
+    background-size: 48px 48px;
+
+    animation: gridMove 18s linear infinite;
+}
+
+.bg-glow{
+    position:fixed;
+
+    width:700px;
+    height:700px;
+
+    border-radius:50%;
+
+    filter:blur(160px);
+
+    opacity:.22;
+
+    z-index:-9;
+
+    animation:floatGlow 12s ease-in-out infinite;
+}
+
+.glow-left{
+
+    background:#00D9FF;
+
+    top:-250px;
+    left:-180px;
+
+}
+
+.glow-right{
+
+    background:#7C3AED;
+
+    bottom:-300px;
+    right:-200px;
+
+    animation-delay:5s;
+
+}
+
+.bg-noise{
+
+    position:fixed;
+
+    inset:0;
+
+    opacity:.025;
+
+    pointer-events:none;
+
+
+    z-index:-8;
+
+}
+
+.vignette{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-7;
+
+    background:
+    radial-gradient(circle at center,
+    transparent 55%,
+    rgba(0,0,0,.45));
+
+}
+
+@keyframes gridMove{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(48px);
+
+    }
+
+}
+
+@keyframes floatGlow{
+
+    0%,100%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(70px);
+
+    }
+
+}
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:
+
+radial-gradient(circle at 20% 20%,rgba(0,217,255,.08),transparent 30%),
+
+radial-gradient(circle at 80% 70%,rgba(124,58,237,.08),transparent 35%);
+
+pointer-events:none;
+
+z-index:-5;
+
+animation:ambientMove 18s ease-in-out infinite;
+
+}
+
+@keyframes ambientMove{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+50%{
+
+transform:translate(30px,-40px);
+
+}
+
+100%{
+
+transform:translate(0,0);
+
+}
+
+}

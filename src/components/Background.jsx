@@ -1,10 +1,14 @@
 export default function Background() {
   return (
     <>
-      <div className="grid" />
-      <div className="gradient gradient1" />
-      <div className="gradient gradient2" />
-      <div className="noise" />
+      <div className="bg-grid"></div>
+
+      <div className="bg-glow glow-left"></div>
+      <div className="bg-glow glow-right"></div>
+
+      <div className="bg-noise"></div>
+
+      <div className="vignette"></div>
     </>
   );
 }

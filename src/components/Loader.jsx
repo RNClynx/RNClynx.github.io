@@ -1,28 +1,29 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const bootSequence = [
+  "> initializing...",
+  "> loading interface...",
+  "> checking systems...",
+  "> online."
+];
+
 export default function Loader({ onFinish }) {
-  const [progress, setProgress] = useState(0);
+  const [line, setLine] = useState(0);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
+    if (line >= bootSequence.length) {
+      setReady(true);
+      return;
+    }
 
-          setTimeout(() => {
-            onFinish();
-          }, 800);
+    const timer = setTimeout(() => {
+      setLine((prev) => prev + 1);
+    }, 700);
 
-          return 100;
-        }
-
-        return prev + 2;
-      });
-    }, 40);
-
-    return () => clearInterval(interval);
-  }, [onFinish]);
+    return () => clearTimeout(timer);
+  }, [line]);
 
   return (
     <AnimatePresence>
@@ -32,23 +33,46 @@ export default function Loader({ onFinish }) {
         exit={{ opacity: 0 }}
       >
         <motion.h1
-          initial={{ scale: 0.9 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.5 }}
+          className="loaderTitle"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
         >
-          LYNX OS
+          LYNX
         </motion.h1>
 
-        <p>{"> Initializing System..."}</p>
+        <div className="loaderTerminal">
+          {bootSequence.slice(0, line).map((text, index) => (
+            <motion.p
+              key={index}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.25 }}
+            >
+              {text}
+            </motion.p>
+          ))}
 
-        <div className="bar">
-          <div
-            className="fill"
-            style={{ width: `${progress}%` }}
-          />
+          {!ready && <span className="cursor">█</span>}
+
+          {ready && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="loaderReady"
+            >
+              <p>Best experienced with sound.</p>
+
+              <button
+                className="loaderButton"
+                onClick={onFinish}
+              >
+                ENTER
+              </button>
+            </motion.div>
+          )}
         </div>
-
-        <span>{progress}%</span>
       </motion.div>
     </AnimatePresence>
   );

@@ -1,0 +1,251 @@
+/* ==========================
+   LYNX TERMINAL
+========================== */
+
+.larp{
+
+    width:min(1200px,92%);
+    margin:auto;
+    padding:140px 0;
+
+}
+
+.terminal{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    background:rgba(7,12,20,.92);
+
+    border:1px solid rgba(0,217,255,.15);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 0 40px rgba(0,217,255,.12),
+        inset 0 0 80px rgba(124,58,237,.05);
+
+}
+
+/* Glow */
+
+.terminal::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-100px;
+
+    background:
+        radial-gradient(circle at top right,
+        rgba(0,217,255,.12),
+        transparent 40%),
+
+        radial-gradient(circle at bottom left,
+        rgba(124,58,237,.08),
+        transparent 40%);
+
+    pointer-events:none;
+
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.terminalHeader{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:18px 24px;
+
+    background:rgba(255,255,255,.03);
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+.terminalHeader p{
+
+    margin-left:16px;
+
+    color:#94A3B8;
+
+    font-size:14px;
+
+    font-family:"JetBrains Mono";
+
+    letter-spacing:2px;
+
+}
+
+.dot{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+}
+
+.red{
+    background:#ff5f57;
+}
+
+.yellow{
+    background:#febc2e;
+}
+
+.green{
+    background:#28c840;
+}
+
+/* ==========================
+   BODY
+========================== */
+
+.terminalBody{
+
+    position:relative;
+
+    padding:35px;
+
+    min-height:520px;
+
+    font-family:"JetBrains Mono";
+
+    color:#D1FAFF;
+
+    line-height:1.7;
+
+}
+
+.terminalBody pre{
+
+    white-space:pre-wrap;
+
+    margin-bottom:18px;
+
+    color:#A5F3FC;
+
+}
+
+/* subtle scanlines */
+
+.terminalBody::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:.12;
+
+    background:repeating-linear-gradient(
+
+        transparent 0px,
+        transparent 3px,
+        rgba(255,255,255,.04) 4px
+
+    );
+
+}
+
+/* ==========================
+   INPUT
+========================== */
+
+.terminalInput{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-top:28px;
+
+}
+
+.terminalInput span{
+
+    color:#00D9FF;
+
+    font-weight:700;
+
+    text-shadow:
+        0 0 10px rgba(0,217,255,.8);
+
+}
+
+.terminalInput input{
+
+    flex:1;
+
+    background:transparent;
+
+    border:none;
+
+    outline:none;
+
+    color:white;
+
+    font-size:17px;
+
+    font-family:"JetBrains Mono";
+
+    caret-color:#00D9FF;
+
+}
+
+.terminalInput input::placeholder{
+
+    color:#64748B;
+
+}
+
+/* ==========================
+   COMMAND COLORS
+========================== */
+
+.command{
+
+    color:#00D9FF;
+
+}
+
+.output{
+
+    color:#E2E8F0;
+
+}
+
+.success{
+
+    color:#22C55E;
+
+}
+
+.error{
+
+    color:#EF4444;
+
+}
+
+.warning{
+
+    color:#FACC15;
+
+}

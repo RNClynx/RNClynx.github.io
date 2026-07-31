@@ -1,0 +1,47 @@
+.stars{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+z-index:-9;
+
+overflow:hidden;
+
+}
+
+.star{
+
+position:absolute;
+
+border-radius:50%;
+
+background:white;
+
+opacity:.6;
+
+animation:twinkle infinite ease-in-out;
+
+box-shadow:0 0 8px white;
+
+}
+
+@keyframes twinkle{
+
+0%,100%{
+
+opacity:.15;
+transform:scale(.8);
+
+}
+
+50%{
+
+opacity:1;
+transform:scale(1.5);
+
+}
+
+}

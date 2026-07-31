@@ -1,0 +1,47 @@
+.screensaver{
+    position:fixed;
+    inset:0;
+    background:#000;
+    z-index:9999;
+    overflow:hidden;
+}
+
+
+.dvdLogo{
+
+    position:absolute;
+
+    font-size:100px;
+
+    font-weight:900;
+
+    color:#00D9FF;
+
+    text-shadow:
+    0 0 20px #00D9FF,
+    0 0 40px #00D9FF;
+
+}
+
+
+.screensaver button{
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:transparent;
+
+    border:1px solid #00D9FF;
+
+    color:#00D9FF;
+
+    padding:12px 30px;
+
+    cursor:pointer;
+
+}

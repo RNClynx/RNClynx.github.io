@@ -1,0 +1,175 @@
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar{
+
+    position:fixed;
+
+    top:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(1400px,95%);
+
+    height:80px;
+
+    padding:0 40px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    border-radius:20px;
+
+    backdrop-filter:blur(20px);
+
+    background:rgba(12,15,24,.55);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    transition:.4s;
+
+    z-index:1000;
+
+}
+
+.navbarScroll{
+
+    background:rgba(10,12,20,.82);
+
+    border-color:rgba(0,217,255,.2);
+
+    box-shadow:0 0 40px rgba(0,217,255,.08);
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    font-family:"Orbitron";
+
+    letter-spacing:4px;
+
+}
+
+.logoIcon{
+
+    color:#00D9FF;
+
+    font-size:28px;
+
+    transition:.4s;
+
+}
+
+.logo:hover .logoIcon{
+
+    transform:rotate(180deg) scale(1.15);
+
+    filter:drop-shadow(0 0 15px #00D9FF);
+
+}
+
+nav{
+
+    display:flex;
+
+    gap:45px;
+
+}
+
+nav a{
+
+    position:relative;
+
+    color:#94A3B8;
+
+    font-size:14px;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:white;
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-8px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:0;
+
+    height:2px;
+
+    border-radius:999px;
+
+    background:#00D9FF;
+
+    transition:.35s;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+.contactBtn{
+
+    padding:15px 28px;
+
+    background:transparent;
+
+    border:1px solid #00D9FF;
+
+    color:#00D9FF;
+
+    font-family:"Orbitron";
+
+    letter-spacing:2px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.contactBtn:hover{
+
+    background:#00D9FF;
+
+    color:#05070B;
+
+    box-shadow:0 0 25px #00D9FF;
+
+}
