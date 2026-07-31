@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const bootSequence = [
   "> loading website...",
   "> loading audio...",
-  "> welcome, lynx."
+  "> welcome."
 ];
 
 const logo = `
