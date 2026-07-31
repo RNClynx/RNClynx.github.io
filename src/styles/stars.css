@@ -1,47 +1,63 @@
 .stars{
 
-position:fixed;
+    position:fixed;
 
-inset:0;
+    inset:0;
 
-pointer-events:none;
+    pointer-events:none;
 
-z-index:-9;
+    z-index:-9;
 
-overflow:hidden;
+    overflow:hidden;
 
 }
 
 .star{
 
-position:absolute;
+    position:absolute;
 
-border-radius:50%;
+    border-radius:50%;
 
-background:white;
+    background:white;
 
-opacity:.6;
+    opacity:.6;
 
-animation:twinkle infinite ease-in-out;
+    animation:twinkle infinite ease-in-out;
 
-box-shadow:0 0 8px white;
+    box-shadow:0 0 8px white;
 
 }
 
 @keyframes twinkle{
 
-0%,100%{
+    0%,100%{
 
-opacity:.15;
-transform:scale(.8);
+        opacity:.15;
+        transform:scale(.8);
+
+    }
+
+    50%{
+
+        opacity:1;
+        transform:scale(1.5);
+
+    }
 
 }
 
-50%{
+/* ==========================
+   MOBILE
+========================== */
 
-opacity:1;
-transform:scale(1.5);
+@media (max-width:768px){
 
-}
+    .star{
+
+        box-shadow:0 0 4px white;
+
+        opacity:.45;
+
+    }
 
 }

@@ -5,11 +5,15 @@
 .loader{
 
     position:fixed;
+
     inset:0;
 
     display:flex;
+
     flex-direction:column;
+
     justify-content:center;
+
     align-items:center;
 
     background:#05070B;
@@ -22,6 +26,10 @@
 
     cursor:pointer;
 
+    padding:20px;
+
+    text-align:center;
+
 }
 
 .loaderAscii{
@@ -33,9 +41,11 @@
     line-height:1.2;
 
     text-shadow:
-    0 0 15px rgba(0,217,255,.35);
+        0 0 15px rgba(0,217,255,.35);
 
     margin:0;
+
+    white-space:pre;
 
 }
 
@@ -139,17 +149,59 @@
 
 }
 
-@media(max-width:700px){
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width:768px){
+
+    .loader{
+
+        padding:25px;
+
+    }
 
     .loaderAscii{
 
-        font-size:8px;
+        font-size:7px;
+
+        line-height:1.1;
+
+    }
+
+    .loaderVersion{
+
+        font-size:12px;
+
+        letter-spacing:2px;
+
+        margin-top:14px;
+
+    }
+
+    .loaderDivider{
+
+        width:100%;
+
+        margin:24px 0;
 
     }
 
     .loaderTerminal{
 
+        width:100%;
+
+        font-size:14px;
+
+        line-height:1.8;
+
+    }
+
+    .loaderContinue{
+
         font-size:15px;
+
+        margin-top:30px;
 
     }
 

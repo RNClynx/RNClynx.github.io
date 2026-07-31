@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import MouseGlow from "./components/MouseGlow";
 import Hero from "./components/Hero";
 import About from "./sections/About";
-import Gaming from "./sections/Gaming";
+import Specs from "./sections/Specs";
 import TikTok from "./sections/TikTok";
 import Contact from "./sections/Contact";
 import ScrollProgress from "./components/ScrollProgress";
@@ -57,7 +57,7 @@ function App() {
 
         <Divider />
 
-        <Gaming />
+        <Specs />
 
         <Divider />
 

@@ -10,7 +10,6 @@ import "./styles/navbar.css";
 import "./styles/hero.css";
 import "./styles/hud.css";
 import "./styles/buttons.css";
-import "./styles/animations.css";
 import "./styles/responsive.css";
 import "./styles/about.css";
 import "./styles/gaming.css";

@@ -1,41 +1,60 @@
+/* ==========================
+   BUTTONS
+========================== */
+
 .primaryBtn,
 .secondaryBtn{
 
-position:relative;
+    position:relative;
 
-overflow:hidden;
+    overflow:hidden;
 
 }
 
 .primaryBtn::before,
 .secondaryBtn::before{
 
-content:"";
+    content:"";
 
-position:absolute;
+    position:absolute;
 
-top:0;
+    top:0;
 
-left:-120%;
+    left:-120%;
 
-width:100%;
+    width:100%;
 
-height:100%;
+    height:100%;
 
-background:linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.4),
-transparent
-);
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.4),
+        transparent
+    );
 
-transition:.5s;
+    transition:.5s;
 
 }
 
 .primaryBtn:hover::before,
 .secondaryBtn:hover::before{
 
-left:130%;
+    left:130%;
+
+}
+
+/* ==========================
+   TOUCH DEVICES
+========================== */
+
+@media (hover: none){
+
+    .primaryBtn::before,
+    .secondaryBtn::before{
+
+        display:none;
+
+    }
 
 }

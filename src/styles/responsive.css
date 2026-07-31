@@ -1,3 +1,9 @@
+/* ==========================
+   RESPONSIVE
+========================== */
+
+/* Loader */
+
 .loaderReady{
 
     margin-top:30px;
@@ -45,5 +51,65 @@
     transform:translateY(-2px);
 
     box-shadow:0 0 25px rgba(0,217,255,.35);
+
+}
+
+/* ==========================
+   GLOBAL MOBILE FIXES
+========================== */
+
+@media (max-width:768px){
+
+    html{
+
+        overflow-x:hidden;
+
+    }
+
+    body{
+
+        overflow-x:hidden;
+
+    }
+
+    section{
+
+        padding:90px 0 !important;
+
+    }
+
+    h1{
+
+        line-height:1.05;
+
+    }
+
+    h2{
+
+        font-size:34px !important;
+
+    }
+
+    h3{
+
+        font-size:24px !important;
+
+    }
+
+    p{
+
+        font-size:16px !important;
+
+        line-height:1.7 !important;
+
+    }
+
+    .sectionTag{
+
+        font-size:12px;
+
+        letter-spacing:2px;
+
+    }
 
 }

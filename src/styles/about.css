@@ -215,8 +215,8 @@
     .about{
 
         grid-template-columns:1fr;
-
-        gap:70px;
+        gap:60px;
+        text-align:center;
 
     }
 
@@ -224,29 +224,57 @@
     .aboutRight{
 
         width:100%;
+        align-items:center;
 
     }
 
     .aboutLeft h2,
     .aboutRight h2{
 
-        font-size:42px;
+        font-size:38px;
+        margin-bottom:20px;
+
+    }
+
+    .aboutRight p{
+
+        font-size:16px;
+        max-width:600px;
+        margin:0 auto 35px;
+        text-align:center;
 
     }
 
     .favoritesGrid{
 
         grid-template-columns:1fr;
+        width:100%;
+
+    }
+
+    .favoriteCard{
+
+        text-align:center;
 
     }
 
     .aboutCards{
 
         grid-column:1;
-
         grid-template-columns:1fr;
+        margin-top:50px;
 
-        margin-top:60px;
+    }
+
+    .aboutCard{
+
+        text-align:center;
+
+    }
+
+    .aboutIcon{
+
+        margin:0 auto 20px;
 
     }
 

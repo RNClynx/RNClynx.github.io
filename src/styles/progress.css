@@ -1,28 +1,60 @@
 .scrollProgress{
 
-position:fixed;
+    position:fixed;
 
-top:0;
+    top:0;
 
-left:0;
+    left:0;
 
-height:4px;
+    height:4px;
 
-background:linear-gradient(
-90deg,
-#00D9FF,
-#6D5EF7,
-#00D9FF
-);
+    background:linear-gradient(
+        90deg,
+        #00D9FF,
+        #6D5EF7,
+        #00D9FF
+    );
 
-background-size:300%;
+    background-size:300%;
 
-animation:shine 6s linear infinite;
+    animation:shine 6s linear infinite;
 
-z-index:99999;
+    z-index:99999;
 
-box-shadow:0 0 20px #00D9FF;
+    box-shadow:0 0 20px #00D9FF;
 
-transition:width .15s linear;
+    transition:width .15s linear;
+
+}
+
+@keyframes shine{
+
+    0%{
+
+        background-position:0%;
+
+    }
+
+    100%{
+
+        background-position:300%;
+
+    }
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width:768px){
+
+    .scrollProgress{
+
+        height:3px;
+
+        box-shadow:0 0 12px rgba(0,217,255,.6);
+
+    }
 
 }

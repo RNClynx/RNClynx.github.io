@@ -249,3 +249,86 @@
     color:#FACC15;
 
 }
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width:768px){
+
+    .larp{
+
+        padding:100px 0;
+
+    }
+
+    .terminal{
+
+        border-radius:18px;
+
+    }
+
+    .terminalHeader{
+
+        padding:14px 18px;
+
+        flex-wrap:wrap;
+
+        gap:8px;
+
+    }
+
+    .terminalHeader p{
+
+        margin-left:10px;
+
+        font-size:12px;
+
+        letter-spacing:1px;
+
+    }
+
+    .terminalBody{
+
+        padding:22px;
+
+        min-height:420px;
+
+        font-size:14px;
+
+        line-height:1.6;
+
+        overflow-x:auto;
+
+    }
+
+    .terminalBody pre{
+
+        font-size:13px;
+
+        white-space:pre-wrap;
+
+        word-break:break-word;
+
+    }
+
+    .terminalInput{
+
+        gap:10px;
+
+        margin-top:20px;
+
+    }
+
+    .terminalInput span{
+
+        font-size:14px;
+
+    }
+
+    .terminalInput input{
+
+        font-size:15px;
+
+    }
+
+}

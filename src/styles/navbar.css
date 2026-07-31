@@ -48,6 +48,10 @@
 
 }
 
+/* ==========================
+   LOGO
+========================== */
+
 .logo{
 
     display:flex;
@@ -83,6 +87,10 @@
     filter:drop-shadow(0 0 15px #00D9FF);
 
 }
+
+/* ==========================
+   NAV LINKS
+========================== */
 
 nav{
 
@@ -144,6 +152,64 @@ nav a:hover::after{
 
 }
 
+/* ==========================
+   RIGHT SIDE
+========================== */
+
+.navRight{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.discordNav{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:#5865F2;
+
+    font-size:26px;
+
+    transition:.3s;
+
+}
+
+.discordNav:hover{
+
+    background:#5865F2;
+
+    color:white;
+
+    border-color:#5865F2;
+
+    box-shadow:0 0 20px rgba(88,101,242,.45);
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================
+   CONTACT BUTTON
+========================== */
+
 .contactBtn{
 
     padding:15px 28px;
@@ -171,5 +237,137 @@ nav a:hover::after{
     color:#05070B;
 
     box-shadow:0 0 25px #00D9FF;
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+.menuButton{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+@media (max-width:768px){
+
+    .navbar{
+
+        width:94%;
+
+        height:70px;
+
+        padding:0 20px;
+
+        border-radius:18px;
+
+    }
+
+    .contactBtn{
+
+        display:none;
+
+    }
+
+    nav{
+
+        position:absolute;
+
+        top:82px;
+
+        left:0;
+
+        width:100%;
+
+        background:rgba(12,15,24,.98);
+
+        backdrop-filter:blur(18px);
+
+        border-radius:18px;
+
+        border:1px solid rgba(255,255,255,.08);
+
+        padding:25px;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:25px;
+
+        opacity:0;
+
+        visibility:hidden;
+
+        transform:translateY(-15px);
+
+        transition:.3s;
+
+    }
+
+    .navOpen{
+
+        opacity:1;
+
+        visibility:visible;
+
+        transform:translateY(0);
+
+    }
+
+    nav a{
+
+        font-size:16px;
+
+        letter-spacing:2px;
+
+    }
+
+    .navRight{
+
+        display:flex;
+
+        align-items:center;
+
+        gap:14px;
+
+    }
+
+    .discordNav{
+
+        width:44px;
+
+        height:44px;
+
+        font-size:24px;
+
+    }
+
+    .menuButton{
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+        width:44px;
+
+        height:44px;
+
+        font-size:30px;
+
+    }
 
 }

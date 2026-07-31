@@ -1,11 +1,16 @@
 .screensaver{
-    position:fixed;
-    inset:0;
-    background:#000;
-    z-index:9999;
-    overflow:hidden;
-}
 
+    position:fixed;
+
+    inset:0;
+
+    background:#000;
+
+    z-index:9999;
+
+    overflow:hidden;
+
+}
 
 .dvdLogo{
 
@@ -18,11 +23,10 @@
     color:#00D9FF;
 
     text-shadow:
-    0 0 20px #00D9FF,
-    0 0 40px #00D9FF;
+        0 0 20px #00D9FF,
+        0 0 40px #00D9FF;
 
 }
-
 
 .screensaver button{
 
@@ -42,6 +46,38 @@
 
     padding:12px 30px;
 
+    border-radius:10px;
+
     cursor:pointer;
+
+    font-size:16px;
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width:768px){
+
+    .dvdLogo{
+
+        font-size:60px;
+
+    }
+
+    .screensaver button{
+
+        width:85%;
+
+        max-width:320px;
+
+        bottom:30px;
+
+        padding:14px 20px;
+
+        font-size:15px;
+
+    }
 
 }

@@ -1,46 +1,127 @@
+/* ==========================
+   GAMING
+========================== */
+
 .specs{
+
     width:min(1300px,92%);
+
     margin:160px auto;
+
 }
 
 .specsGrid{
+
     display:grid;
+
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
     gap:24px;
+
 }
 
 .specCard{
+
     padding:32px;
+
     border-radius:22px;
+
     background:rgba(255,255,255,.04);
+
     border:1px solid rgba(255,255,255,.08);
+
     backdrop-filter:blur(18px);
+
     transition:.35s;
+
 }
 
 .specCard:hover{
+
     transform:translateY(-8px);
+
     border-color:#00D9FF;
+
     box-shadow:0 0 30px rgba(0,217,255,.18);
+
 }
 
 .specIcon{
+
     font-size:36px;
+
     color:#00D9FF;
+
     margin-bottom:20px;
+
 }
 
 .specCard span{
+
     display:block;
+
     font-size:12px;
+
     color:#94A3B8;
+
     letter-spacing:2px;
+
     text-transform:uppercase;
+
     margin-bottom:10px;
+
     font-family:"JetBrains Mono";
+
 }
 
 .specCard h3{
+
     font-size:24px;
+
     line-height:1.4;
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width:768px){
+
+    .specs{
+
+        margin:100px auto;
+
+    }
+
+    .specsGrid{
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+
+    }
+
+    .specCard{
+
+        padding:24px;
+
+        text-align:center;
+
+    }
+
+    .specIcon{
+
+        font-size:32px;
+
+        margin:0 auto 18px;
+
+    }
+
+    .specCard h3{
+
+        font-size:20px;
+
+    }
+
 }
