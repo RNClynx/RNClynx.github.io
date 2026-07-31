@@ -44,7 +44,6 @@ export default function Hero() {
           />
 
           <p className="heroDescription">
-            Currently finishing school and pursuing Computer Science.
             <br />
             I'm usually either streaming R6, playing Roblox with my
             friends, or doing something random {":)"}

@@ -126,8 +126,7 @@ export default function About() {
           things because it lets me meet new people and build a community.
           <br /><br />
 
-          When I'm not gaming, I'm usually coding, learning something new, or
-          working toward my Computer Science degree.
+          :P.
         </p>
 
       </motion.div>
