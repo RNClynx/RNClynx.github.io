@@ -26,7 +26,7 @@ const favorites = [
   {
     emoji: "😴",
     title: "Current Problem",
-    value: "Stressed Out",z
+    value: "Stressed Out",
   },
 ];
 
