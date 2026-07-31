@@ -32,9 +32,11 @@ export default function Hero() {
 
           <TypeAnimation
             sequence={[
+              "<3",
+             2500,
              "currently addicted to r6",
              2500,
-             "fueled by white monster and diet dr pepper",
+             "<3",
              2500,
             ]}
             speed={55}
